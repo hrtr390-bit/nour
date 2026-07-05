@@ -1658,15 +1658,19 @@
     <script src="main.js">
         
 const params = new URLSearchParams(window.location.search);
-const doctor = params.get("doc");
+const doctor = params.get("doc") || "unknown";
 
-// بس للتجربة
 console.log("Doctor:", doctor);
 
-// إرسال لGoogle Analytics
-gtag('event', 'doctor_visit', {
-  doctor_id: doctor
-});
+if (typeof gtag === "function") {
+    gtag("event", "doctor_visit", {
+        doctor_id: doctor
+    });
+}
+
+if (typeof clarity === "function") {
+    clarity("set", "doctor", doctor);
+}
 
     </script>
     
