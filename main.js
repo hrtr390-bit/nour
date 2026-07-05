@@ -3068,5 +3068,18 @@ console.log(probabilityList.innerHTML);
 
 
 
+const params = new URLSearchParams(window.location.search);
+const doctor = params.get("doc") || "unknown";
 
+console.log("Doctor:", doctor);
+
+if (typeof gtag === "function") {
+    gtag("event", "doctor_visit", {
+        doctor_id: doctor
+    });
+}
+
+if (typeof clarity === "function") {
+    clarity("set", "doctor", doctor);
+}
 
