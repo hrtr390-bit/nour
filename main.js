@@ -3071,15 +3071,20 @@ console.log(probabilityList.innerHTML);
 const params = new URLSearchParams(window.location.search);
 const doctor = params.get("doc") || "unknown";
 
+console.log("================================");
 console.log("Doctor:", doctor);
+console.log("gtag exists:", typeof gtag);
+console.log("clarity exists:", typeof clarity);
+console.log("================================");
 
 if (typeof gtag === "function") {
     gtag("event", "doctor_visit", {
         doctor_id: doctor
     });
+    console.log("Google Analytics Event Sent");
 }
 
 if (typeof clarity === "function") {
     clarity("set", "doctor", doctor);
+    console.log("Clarity Property Sent");
 }
-
