@@ -3088,3 +3088,86 @@ if (typeof clarity === "function") {
     clarity("set", "doctor", doctor);
     console.log("Clarity Property Sent");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//============================
+// Welcome Popup
+//============================
+
+const welcomePopup = document.getElementById("welcomeOverlay");
+
+const assessmentPopup = document.getElementById("assessmentOverlay");
+
+const closeWelcome =
+document.getElementById("closePopup");
+
+const startExperience =
+document.getElementById("startExperience");
+
+const browseWebsite =
+document.getElementById("browseWebsite");
+
+const closePopup = document.getElementById("closePopup");
+
+closePopup.addEventListener("click", function () {
+
+    welcomePopup.classList.remove("active");
+
+});
+//============================
+// إظهار نافذة الترحيب
+//============================
+
+window.addEventListener("load",()=>{
+
+    welcomePopup.classList.add("active");
+
+});
+
+//============================
+// زر X
+//============================
+
+closeWelcome.onclick=()=>{
+
+    welcomePopup.classList.remove("active");
+
+}
+
+
+//============================
+// تصفح الموقع
+//============================
+
+browseWebsite.onclick=()=>{
+
+    welcomePopup.classList.remove("active");
+
+}
+
+
+//============================
+// ابدأ التجربة
+//============================
+
+startExperience.onclick=()=>{
+
+    welcomePopup.classList.remove("active");
+
+    setTimeout(()=>{
+
+        assessmentPopup.classList.add("active");
+
+    },250);
+
+}
