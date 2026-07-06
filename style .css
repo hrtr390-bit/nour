@@ -4662,3 +4662,1138 @@ html {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=============================
+        Welcome Popup
+==============================*/
+
+.welcome-overlay{
+
+    position: fixed;
+
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(23,102,255,.12),
+    rgba(4,12,28,.78));
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 999999;
+
+    overflow: hidden;
+
+    animation: overlayFade .45s ease;
+    transition: .5s;
+
+}
+.welcome-overlay.active{
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/*=============================
+          Popup Card
+==============================*/
+
+.welcome-popup{
+
+    position: relative;
+
+    width: 92%;
+
+    max-width: 760px;
+
+    background:
+    linear-gradient(180deg,
+    #ffffff 0%,
+    #fbfcff 100%);
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    padding:
+
+    55px
+    55px
+    45px;
+
+    border:
+
+    1px solid
+    rgba(255,255,255,.8);
+
+    box-shadow:
+
+    0 35px 80px
+    rgba(7,18,44,.22),
+
+    0 10px 30px
+    rgba(7,18,44,.08),
+
+    inset 0 1px 0
+    rgba(255,255,255,.9);
+
+    animation:
+
+    popupShow
+    .55s
+    cubic-bezier(.17,.89,.32,1.15);
+
+}
+
+
+/*=============================
+       Floating Lights
+==============================*/
+
+.welcome-popup::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(31,110,255,.12),
+
+    transparent 72%
+
+    );
+
+    top:-180px;
+
+    left:-140px;
+
+    pointer-events:none;
+
+}
+
+
+.welcome-popup::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(46,183,255,.12),
+
+    transparent 70%
+
+    );
+
+    bottom:-160px;
+
+    right:-120px;
+
+    pointer-events:none;
+
+}
+
+
+/*=============================
+         Close Button
+==============================*/
+
+.popup-close{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#1d2a44;
+
+    font-size:22px;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 8px 18px
+    rgba(0,0,0,.08);
+
+}
+
+
+.popup-close:hover{
+
+    transform:
+
+    rotate(90deg)
+    scale(1.08);
+
+    background:#0e63ff;
+
+    color:white;
+
+}
+
+
+/*=============================
+          Animations
+==============================*/
+
+@keyframes overlayFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes popupShow{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+        translateY(40px)
+
+        scale(.90);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+}
+/*=============================
+        Popup Icon
+==============================*/
+
+.popup-icon{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    position:relative;
+
+}
+
+
+.popup-icon-circle{
+
+    position:relative;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(180deg,#ffffff,#f2f8ff);
+
+    box-shadow:
+
+    0 20px 45px rgba(0,87,255,.10),
+
+    inset 0 2px 6px rgba(255,255,255,.95),
+
+    inset 0 -8px 18px rgba(0,82,255,.06);
+
+}
+
+
+/* الهالة الزرقاء */
+
+.popup-icon-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-16px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    rgba(32,120,255,.18),
+    transparent 72%
+    );
+
+    animation:
+    pulseGlow 2.5s infinite;
+
+}
+
+
+/* أيقونة السن */
+
+.popup-icon-circle i{
+
+    position:relative;
+
+    font-size:56px;
+
+    color:#1565ff;
+
+    animation:
+    toothFloat 4s ease-in-out infinite;
+
+}
+
+
+/*=============================
+      Floating Dots
+==============================*/
+
+.popup-icon::before,
+
+.popup-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#4aa3ff;
+
+    box-shadow:
+
+    0 0 15px rgba(0,119,255,.45);
+
+}
+
+
+.popup-icon::before{
+
+    left:26%;
+
+    top:38%;
+
+}
+
+
+.popup-icon::after{
+
+    right:26%;
+
+    top:32%;
+
+}
+
+
+/*=============================
+          Title
+==============================*/
+
+.popup-title{
+
+    text-align:center;
+
+    color:#14203b;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    line-height:1.45;
+
+    margin-bottom:28px;
+
+    letter-spacing:-1px;
+
+}
+
+
+/*=============================
+        Divider
+==============================*/
+
+.popup-divider{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+
+.popup-divider span{
+
+    width:160px;
+
+    height:2px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(21,101,255,.35),
+    transparent
+    );
+
+}
+
+
+.popup-divider i{
+
+    color:#1565ff;
+
+    font-size:18px;
+
+    animation:
+    sparkleRotate 5s linear infinite;
+
+}
+
+
+/*=============================
+        Animations
+==============================*/
+
+@keyframes pulseGlow{
+
+    0%{
+
+        transform:scale(.95);
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.95);
+
+        opacity:.4;
+
+    }
+
+}
+
+
+@keyframes toothFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes sparkleRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/*=============================
+        Popup Content
+==============================*/
+
+.popup-content{
+
+    text-align:center;
+
+    max-width:560px;
+
+    margin:auto;
+
+}
+
+
+.popup-content p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#56657d;
+
+    margin-bottom:18px;
+
+    font-weight:500;
+
+}
+
+
+/* اعرف حالتك */
+
+.popup-content strong{
+
+    position:relative;
+
+    color:#1565ff;
+
+    font-weight:800;
+
+    font-size:24px;
+
+    padding:2px 8px;
+
+}
+
+
+.popup-content strong::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:2px;
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:20px;
+
+    background:rgba(21,101,255,.12);
+
+    z-index:-1;
+
+}
+
+
+/* أقل من دقيقة */
+
+.popup-time{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:28px;
+
+    font-size:18px !important;
+
+    color:#1565ff !important;
+
+    font-weight:700;
+
+}
+
+
+.popup-time i{
+
+    font-size:20px;
+
+}
+
+
+/*=============================
+        Buttons
+==============================*/
+
+.popup-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:45px;
+
+}
+
+
+/*=============================
+        Main Button
+==============================*/
+
+.start-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    max-width:360px;
+
+    height:68px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #0d63ff,
+    #1f8cff
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 18px 35px rgba(13,99,255,.30);
+
+}
+
+
+/* اللمعة */
+
+.start-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.45),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+
+.start-btn:hover::before{
+
+    left:160%;
+
+}
+
+
+.start-btn:hover{
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.02);
+
+    box-shadow:
+
+    0 26px 45px rgba(13,99,255,.40);
+
+}
+
+
+.start-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+/*=============================
+        Browse Button
+==============================*/
+
+.browse-btn{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#5c6c84;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.30s;
+
+}
+
+
+.browse-btn:hover{
+
+    color:#1565ff;
+
+    transform:translateY(-2px);
+
+}
+/*=============================
+        Bottom Decoration
+==============================*/
+
+.popup-wave{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:8px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #0d63ff,
+    #39b8ff,
+    #0d63ff
+    );
+
+    background-size:300%;
+
+    animation:waveMove 8s linear infinite;
+
+}
+
+
+/*=============================
+        Scroll Lock
+==============================*/
+
+body.popup-open{
+
+    overflow:hidden;
+
+}
+
+.popup-close{
+
+    position:absolute;
+
+    top:14px;
+
+    right:14px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+    font-size:18px;
+
+}
+/*=============================
+        Responsive
+==============================*/
+
+@media (max-width:900px){
+
+    .welcome-popup{
+
+        width:94%;
+
+        padding:40px 28px;
+
+        border-radius:24px;
+
+    }
+
+    .popup-title{
+
+        font-size:30px;
+
+    }
+
+    .popup-content p{
+
+        font-size:17px;
+
+    }
+
+    .popup-content strong{
+
+        font-size:21px;
+
+    }
+
+    .popup-divider span{
+
+        width:80px;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .welcome-overlay{
+
+        padding:15px;
+
+        overflow-y:auto;
+
+    }
+
+    .welcome-popup{
+
+        width:100%;
+
+        max-height:88vh;
+
+        
+
+        padding:28px 22px;
+
+        border-radius:22px;
+
+    }
+
+    .popup-title{
+
+        font-size:22px;
+
+        line-height:1.5;
+
+        margin-bottom:18px;
+
+    }
+
+    .popup-content p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .popup-content strong{
+
+        font-size:18px;
+
+    }
+
+    .popup-icon-circle{
+
+        width:85px;
+
+        height:85px;
+
+    }
+
+    .popup-icon-circle i{
+
+        font-size:34px;
+
+    }
+
+    .popup-divider{
+
+        margin-bottom:22px;
+
+    }
+
+    .popup-divider span{
+
+        width:55px;
+
+    }
+
+    .start-btn{
+
+        height:56px;
+
+        font-size:18px;
+
+    }
+
+    .browse-btn{
+
+        font-size:16px;
+
+    }
+    
+
+}
+/*=============================
+      Small Phones
+==============================*/
+
+@media (max-width:430px){
+
+    .welcome-popup{
+
+        width:94%;
+
+        max-height:85vh;
+
+        
+
+        padding:28px 20px 24px;
+
+        border-radius:22px;
+
+        scrollbar-width:thin;
+
+        scrollbar-color:#0d63ff #eef4ff;
+
+    }
+
+    .welcome-popup::-webkit-scrollbar{
+
+        width:6px;
+
+    }
+
+    .welcome-popup::-webkit-scrollbar-track{
+
+        background:#eef4ff;
+
+        border-radius:20px;
+
+    }
+
+    .welcome-popup::-webkit-scrollbar-thumb{
+
+        background:#0d63ff;
+
+        border-radius:20px;
+
+    }
+
+    .popup-icon-circle{
+
+        width:78px;
+
+        height:78px;
+
+    }
+
+    .popup-icon-circle i{
+
+        font-size:34px;
+
+    }
+
+    .popup-title{
+
+        font-size:22px;
+
+        margin-bottom:18px;
+
+    }
+
+    .popup-content p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+        margin-bottom:12px;
+
+    }
+
+    .popup-content strong{
+
+        font-size:18px;
+
+    }
+
+    .popup-divider{
+
+        margin-bottom:20px;
+
+    }
+
+    .popup-divider span{
+
+        width:55px;
+
+    }
+
+    .start-btn{
+
+        height:56px;
+
+        font-size:17px;
+
+    }
+
+    .browse-btn{
+
+        font-size:15px;
+
+    }
+
+}
+
