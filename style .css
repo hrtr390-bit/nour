@@ -4684,8 +4684,8 @@ html {
     position: fixed;
 
     inset: 0;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
+    pointer-events: all;
     transform: translateY(10px);
 
     width: 100%;
@@ -4716,8 +4716,8 @@ html {
 
 }
 .welcome-overlay.active{
-  pointer-events: all;
-  opacity: 1;
+  pointer-events: none;
+  opacity: 0;
   transform: translateY(0px);
 }
 
