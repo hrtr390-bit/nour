@@ -3129,7 +3129,7 @@ closePopup.addEventListener("click", function () {
 
 window.addEventListener("load",()=>{
 
-    welcomePopup.classList.add("know");
+    welcomePopup.classList.remove("know");
 
 });
 
@@ -3139,7 +3139,7 @@ window.addEventListener("load",()=>{
 
 closeWelcome.onclick=()=>{
 
-    welcomePopup.classList.remove("know");
+    welcomePopup.classList.add("know");
 
 }
 
@@ -3150,7 +3150,7 @@ closeWelcome.onclick=()=>{
 
 browseWebsite.onclick=()=>{
 
-    welcomePopup.classList.remove("know");
+    welcomePopup.classList.add("know");
 
 }
 
@@ -3161,7 +3161,7 @@ browseWebsite.onclick=()=>{
 
 startExperience.onclick=()=>{
 
-    welcomePopup.classList.remove("know");
+    welcomePopup.classList.add("know");
 
     setTimeout(()=>{
 
