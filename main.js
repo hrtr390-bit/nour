@@ -3099,7 +3099,6 @@ if (typeof clarity === "function") {
 
 
 
-
 //============================
 // Welcome Popup
 //============================
@@ -3121,14 +3120,18 @@ const closePopup = document.getElementById("closePopup");
 
 closePopup.addEventListener("click", function () {
 
-    welcomePopup.classList.remove("active");
+    welcomePopup.classList.remove("know");
 
 });
 //============================
 // إظهار نافذة الترحيب
 //============================
 
+window.addEventListener("load",()=>{
 
+    welcomePopup.classList.add("know");
+
+});
 
 //============================
 // زر X
@@ -3136,7 +3139,7 @@ closePopup.addEventListener("click", function () {
 
 closeWelcome.onclick=()=>{
 
-    welcomePopup.classList.add("active");
+    welcomePopup.classList.remove("know");
 
 }
 
@@ -3147,7 +3150,7 @@ closeWelcome.onclick=()=>{
 
 browseWebsite.onclick=()=>{
 
-    welcomePopup.classList.add("active");
+    welcomePopup.classList.remove("know");
 
 }
 
@@ -3158,7 +3161,7 @@ browseWebsite.onclick=()=>{
 
 startExperience.onclick=()=>{
 
-    welcomePopup.classList.add("active");
+    welcomePopup.classList.remove("know");
 
     setTimeout(()=>{
 
