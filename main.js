@@ -3128,11 +3128,7 @@ closePopup.addEventListener("click", function () {
 // إظهار نافذة الترحيب
 //============================
 
-window.addEventListener("load",()=>{
 
-    welcomePopup.classList.add("active");
-
-});
 
 //============================
 // زر X
@@ -3140,7 +3136,7 @@ window.addEventListener("load",()=>{
 
 closeWelcome.onclick=()=>{
 
-    welcomePopup.classList.remove("active");
+    welcomePopup.classList.add("active");
 
 }
 
@@ -3151,7 +3147,7 @@ closeWelcome.onclick=()=>{
 
 browseWebsite.onclick=()=>{
 
-    welcomePopup.classList.remove("active");
+    welcomePopup.classList.add("active");
 
 }
 
@@ -3162,7 +3158,7 @@ browseWebsite.onclick=()=>{
 
 startExperience.onclick=()=>{
 
-    welcomePopup.classList.remove("active");
+    welcomePopup.classList.add("active");
 
     setTimeout(()=>{
 
